@@ -36,20 +36,20 @@ namespace MyLogger
             }
         }
         
-        internal override void WriteMessage(string type, string message)
+        internal override void WriteMessage(LogTypeEnum type, string message)
         {
             switch (type)
             {
-                case "DEBUG":
-                    EventLog.WriteEntry(_source, string.Format("{0} -- {1}", type, message), EventLogEntryType.Information);
+                case LogTypeEnum.DEBUG:
+                    EventLog.WriteEntry(_source, string.Format("{0} -- {1}", type.ToString(), message), EventLogEntryType.Information);
                     break;
-                case "Information":
+                case LogTypeEnum.Information:
                     EventLog.WriteEntry(_source, message, EventLogEntryType.Information);
                     break;
-                case "Warning":
+                case LogTypeEnum.Warning:
                     EventLog.WriteEntry(_source, message, EventLogEntryType.Warning);
                     break;
-                case "Error":
+                case LogTypeEnum.Error:
                     EventLog.WriteEntry(_source, message, EventLogEntryType.Error);
                     break;
                 default:

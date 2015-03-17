@@ -18,7 +18,7 @@
             <summary>
             Send an Information message and log the message.
             </summary>
-            <param name="message">The message to be logged</param>
+            <param name="message">The message to be logged.</param>
         </member>
         <member name="M:MyLogger.Logger.Warning(System.String)">
             <summary>
@@ -26,17 +26,41 @@
             </summary>
             <param name="message">The message to be logged.</param>
         </member>
-        <member name="M:MyLogger.Logger.Error(System.String)">
+        <member name="M:MyLogger.Logger.Warning(System.String,System.Exception)">
             <summary>
-            Send a Error message and log the message.
+            Send a Warning message and a System.Exception to be logged.
+            The following System.Exception properties will be added to the message: Message
             </summary>
             <param name="message">The message to be logged.</param>
+            <param name="exception">A exception derived from System.Exception</param>
+        </member>
+        <member name="M:MyLogger.Logger.Error(System.String)">
+            <summary>
+            Send an Error message and log the message.
+            </summary>
+            <param name="message">The message to be logged.</param>
+        </member>
+        <member name="M:MyLogger.Logger.Error(System.String,System.Exception)">
+            <summary>
+            Send an Error message and a System.Exception to be logged.
+            The following System.Exception properties will be added to the message: Source and Message
+            </summary>
+            <param name="message">The message to be logged.</param>
+            <param name="exception">A exception derived from System.Exception</param>
         </member>
         <member name="M:MyLogger.Logger.Debug(System.String)">
             <summary>
             Send a DEBUG message and log the message.
             </summary>
             <param name="message">The message to be logged.</param>
+        </member>
+        <member name="M:MyLogger.Logger.Debug(System.String,System.Exception)">
+            <summary>
+            Send a DEBUG message and a System.Exception to be logged.
+            The following System.Exception properties will be added to the message: Source, Message and StackTrace
+            </summary>
+            <param name="message">The message to be logged.</param>
+            <param name="exception">A exception derived from System.Exception</param>
         </member>
         <member name="M:MyLogger.SystemEventLogger.#ctor(System.String,System.String)">
             <summary>
@@ -52,6 +76,20 @@
             <summary>
             A utility for logging messages to text files. 
             </summary>
+        </member>
+        <member name="M:MyLogger.TextLogger.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the MyLogger.TextLogger class setting the directory
+            and file name along with creating the directory initializing the file for logging.
+            </summary>
+            <param name="directory">The directory where the log will be written to.</param>
+            <exception cref="T:System.ArgumentException"/>
+            <exception cref="T:System.ArgumentNullException"/>
+            <exception cref="T:System.UnauthorizedAccessException"/>
+            <exception cref="T:System.NotSupportedException"/>
+            <exception cref="T:System.IO.IOException"/>
+            <exception cref="T:System.IO.PathTooLongException"/>
+            <exception cref="T:System.IO.DirectoryNotFoundException"/>
         </member>
         <member name="M:MyLogger.TextLogger.#ctor(System.String,System.String)">
             <summary>
