@@ -154,6 +154,7 @@ csx/
 AppPackages/
 
 # Others
+.DS_Store
 *.[Cc]ache
 ClientBin/
 [Ss]tyle[Cc]op.*

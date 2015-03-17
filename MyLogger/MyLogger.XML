@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyLogger</name>
+    </assembly>
+    <members>
+        <member name="T:MyLogger.SystemEventLogger">
+            <summary>
+            A utility for logging messages to the system event logs.
+            </summary>
+        </member>
+        <member name="T:MyLogger.Logger">
+            <summary>
+            Base class for various MyLogger.Logger utilities.
+            </summary>
+        </member>
+        <member name="M:MyLogger.Logger.Information(System.String)">
+            <summary>
+            Send an Information message and log the message.
+            </summary>
+            <param name="message">The message to be logged</param>
+        </member>
+        <member name="M:MyLogger.Logger.Warning(System.String)">
+            <summary>
+            Send a Warning message and log the message.
+            </summary>
+            <param name="message">The message to be logged.</param>
+        </member>
+        <member name="M:MyLogger.Logger.Error(System.String)">
+            <summary>
+            Send a Error message and log the message.
+            </summary>
+            <param name="message">The message to be logged.</param>
+        </member>
+        <member name="M:MyLogger.Logger.Debug(System.String)">
+            <summary>
+            Send a DEBUG message and log the message.
+            </summary>
+            <param name="message">The message to be logged.</param>
+        </member>
+        <member name="M:MyLogger.SystemEventLogger.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the MyLogger.SystemEventLogger class. Verifies a source is valid and checks if a log exists and creates one if not.
+            </summary>
+            <param name="source">The source name by which the application is registered on the local computer.</param>
+            <param name="log">The name of the log the source's entries are written to. Possible values include Application, System, or a custom event log. Default is Application.</param>
+            <exception cref="T:System.Security.SecurityException"/>
+            <exception cref="T:System.ArgumentException"/>
+            <exception cref="T:System.InvalidOperationException"/>
+        </member>
+        <member name="T:MyLogger.TextLogger">
+            <summary>
+            A utility for logging messages to text files. 
+            </summary>
+        </member>
+        <member name="M:MyLogger.TextLogger.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the MyLogger.TextLogger class setting the directory
+            and file name along with creating the directory initializing the file for logging.
+            </summary>
+            <param name="directory">The directory where the log will be written to.</param>
+            <param name="fileName">The name of the log file with or without an extension. If no extension is provided ".log" will be used. If null or empty a System.DateTime.Now.ToString("yyyy-MM-dd") will be used.</param>
+            <exception cref="T:System.ArgumentException"/>
+            <exception cref="T:System.ArgumentNullException"/>
+            <exception cref="T:System.UnauthorizedAccessException"/>
+            <exception cref="T:System.NotSupportedException"/>
+            <exception cref="T:System.IO.IOException"/>
+            <exception cref="T:System.IO.PathTooLongException"/>
+            <exception cref="T:System.IO.DirectoryNotFoundException"/>
+        </member>
+    </members>
+</doc>
