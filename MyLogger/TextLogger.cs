@@ -82,7 +82,7 @@ namespace MyLogger
         {
             using (StreamWriter sw = File.AppendText(_path))
             {
-                sw.WriteLineAsync(string.Format("{0} {1} {2}", DateTime.Now.ToLongTimeString(), type.ToString(), message));
+                sw.WriteLine(string.Format("{0} {1} {2}", DateTime.Now.ToLongTimeString(), type.ToString(), message));
             }
         }
     }

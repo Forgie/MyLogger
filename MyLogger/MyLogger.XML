@@ -4,9 +4,9 @@
         <name>MyLogger</name>
     </assembly>
     <members>
-        <member name="T:MyLogger.SystemEventLogger">
+        <member name="T:MyLogger.ConsoleLogger">
             <summary>
-            A utility for logging messages to the system event logs.
+            A utility for logging messages to the Console. 
             </summary>
         </member>
         <member name="T:MyLogger.Logger">
@@ -61,6 +61,11 @@
             </summary>
             <param name="message">The message to be logged.</param>
             <param name="exception">A exception derived from System.Exception</param>
+        </member>
+        <member name="T:MyLogger.SystemEventLogger">
+            <summary>
+            A utility for logging messages to the system event logs.
+            </summary>
         </member>
         <member name="M:MyLogger.SystemEventLogger.#ctor(System.String,System.String)">
             <summary>
