@@ -1,6 +1,6 @@
 # MyLogger
 
-A C# Logging Library for quick and consistent logging. Supported outputs are Text and System Event Logs.
+A C# Logging Library for quick and consistent logging. Supported outputs are Text, System Event Logs and Console.
 
 ## Usage
 1. Fork it
